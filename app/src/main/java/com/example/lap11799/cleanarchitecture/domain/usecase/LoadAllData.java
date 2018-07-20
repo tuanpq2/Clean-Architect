@@ -10,7 +10,7 @@ import io.reactivex.Observable;
 
 public class LoadAllData {
 
-    IRepository repository;
+    private IRepository repository;
 
     public LoadAllData(){
         this.repository = new Repository();

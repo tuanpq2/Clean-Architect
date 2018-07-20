@@ -6,7 +6,9 @@ import com.example.lap11799.cleanarchitecture.domain.usecase.LoadAllData;
 import java.util.List;
 
 import io.reactivex.Observer;
+import io.reactivex.Scheduler;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 
 public class DataPresenter implements DataConstract.IDataPresenter {
 
@@ -23,7 +25,7 @@ public class DataPresenter implements DataConstract.IDataPresenter {
     public void getData() {
         dataView.showProgressBar();
 
-        loadAllData.loadData().subscribe(new Observer<List<Data>>() {
+        loadAllData.loadData().subscribeOn(Schedulers.newThread()).subscribe(new Observer<List<Data>>() {
             @Override
             public void onSubscribe(Disposable d) {
 

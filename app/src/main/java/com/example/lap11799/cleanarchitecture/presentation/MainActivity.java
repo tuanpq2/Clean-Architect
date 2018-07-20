@@ -17,7 +17,6 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements DataConstract.IDataView{
     RecyclerView recyclerView;
     ProgressBar progressBar;
-    Button button;
     private DataAdapter adapter;
     DataPresenter presenter;
 
